@@ -1,5 +1,6 @@
 import './App.css';
 import React,{useState, useEffect} from 'react';
+import Btn from "./btn.js";
 
 function App() {
   const [input, setInput] = useState(0);
@@ -31,10 +32,10 @@ function App() {
       <input onChange={(test) => setInput(test.target.value)}></input>
       <input onChange={(test) => setInput2(test.target.value)}></input>
       <h2>{res}</h2>
-      <button onClick={() => calculate("+")}>+</button> 
-      <button onClick={() => calculate("-")}>-</button> 
-      <button onClick={() => calculate("*")}>*</button> 
-      <button onClick={() => calculate("/")}>/</button>
+      <Btn X={"+"} y={(e)=> calculate(e)}/>
+      <Btn X={"-"} y={(e)=> calculate(e)}/>
+      <Btn X={"*"} y={(e)=> calculate(e)}/>
+      <Btn X={"/"} y={(e)=> calculate(e)}/>
     </div>
   );
 }
